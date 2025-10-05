@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Marcellus&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <style>
+            body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+                background-color: #1e3f20;
+                font-family: "DM Sans", sans-serif;
+                font-weight: bold;
+            }
+
+            #box{
+                border: 1px solid #4a7856;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+                border-radius: 0.7vw;
+                height: 90%;
+                width: 90%;
+                background-color: #4a7856;
+                flex-direction: column;
+            }
+
+            #naslov{
+                color: #fffeff;
+                font-size: 10vw;
+            }
+
+            #clicker{
+                width: 80%;
+                height: 5%;
+                border-radius: 2vw;
+                border: 2px solid #1e3f20;
+                background-color: #fffeff;
+                color: #774c60;
+                font-weight: bold;
+                font-size: 2vw;
+            }
+
+            #clicker:hover{
+                transform: scale(102%);
+                border: 2px solid #de92b5;
+                background-color: #de92b5;
+                color: #fffeff;
+                transition: ease;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="box">
+            <div id="naslov">HELP</div>
+            <button id="clicker">cetrizine tracker</button>
+        </div>
+
+        <script>
+            
+            const cetrizine = document.getElementById("clicker");
+            cetrizine.addEventListener('click', () => {
+                window.location.href = "cetrizine-tracker.html";
+            });
+        </script>
+    </body>
+</html>

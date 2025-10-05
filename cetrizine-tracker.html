@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            body{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #774c60;
+                margin: 0;
+                padding: 0;
+            }
+
+            #box{
+                width: 90%;
+                height: 90%;
+                border: 1px solid #fffeff;
+                border-radius: 2vw;
+                background-color: #fffeff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-family: "DM Sans", sans-serif;
+                font-weight: bold;
+            }
+
+            #should, #actual{
+                background-color: #de92b5;
+                width: 90%;
+                height: 25%;
+                border-radius: 2vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #left, #right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3vw;
+                color: #fffeff;
+            }
+
+            #buttonLeft, #buttonRight{
+                margin: 2vw;
+                font-size: 4vw;
+                border-radius: 50%;
+                border: 1px solid #774c60;
+                width: 6vw;
+                height: 6vw;
+                text-align: center;
+                color: #fffeff;
+                background-color: #774c60;
+                font-weight: bold;
+            }
+
+            #buttonLeft:hover, #buttonRight:hover{
+                background-color: #fffeff;
+                border: 1px solid #fffeff;
+                color: #774c60;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div id="naslov" style="font-size: 5vw;
+            margin-bottom: 7vw;"
+            >CETRIZINE TRACKER</div> 
+
+
+        <div id="should" style="margin-bottom: 2vw;">
+            <div id="left">You Have: </div>
+            <div id="right">
+                <button  id="buttonLeft">-</button>
+                <h1 id="count">230</h1>
+                <button  id="buttonRight">+</button>
+            </div>
+        </div>
+        <div id="actual">
+            <div id="left">You Should Have:</div>
+            <div id="right" style="font-size: 7vw; margin-left: 25vw;">230</div>
+        </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+        <script>
+            const buttonLeft = document.getElementById("buttonLeft");
+            const buttonRight = document.getElementById("buttonRight");
+            const number = document.getElementById("count");
+            let savedCounter = localStorage.getItem("counter");
+            let counter;
+
+            if(savedCounter !== null){counter = parseInt(savedCounter);}
+            else{counter = 0;}
+
+            number.textContent = counter;
+        
+            buttonLeft.addEventListener("click", () => {
+            counter--;
+            number.textContent = counter;
+            localStorage.setItem("counter", counter);
+            });
+
+            buttonRight.addEventListener("click", () => {
+                counter++;
+                number.textContent = counter;
+                localStorage.setItem("counter", counter);
+            });
+
+
+        </script>
+    </body>
+</html>
